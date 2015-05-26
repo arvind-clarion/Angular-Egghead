@@ -14,7 +14,12 @@ myApp.controller('MyController', function ($scope) {
 })
 .controller('SecondCtrl', function($scope, Data){
   $scope.my_variable = Data;
+  // You can not use this method for other controller
+  $scope.reversedMessage = function(message) {
+    return message.split("").reverse().join();
+  }
 })
 .controller('ThirdCtrl', function($scope, Data){
   $scope.my_variable = Data;
+
 })
