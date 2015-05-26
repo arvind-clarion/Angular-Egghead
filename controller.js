@@ -5,6 +5,12 @@ var myApp = angular.module('myApp', []);
 myApp.controller('MyController', function ($scope) {
   $scope.my_variable = {message: "My First controller testing"}
 })
+// created filter to reverse the content it is globle method now you can use it in nay controller of this class
+.filter('reverse', function() {
+  return function(text) {
+     return text.split("").reverse().join();
+  };
+})
 .factory('Data', function(){
    return {message: "I am data from service"}
 })
