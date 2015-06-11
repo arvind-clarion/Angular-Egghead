@@ -1,0 +1,21 @@
+<!-- Sharing data between controller -->
+<!doctype html>
+<html>
+  <head>
+    <title>Isolated scope options</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css">
+    <script src="ep20_controller.js"></script>
+  </head>
+  <body>
+    <div ng-app='phoneApp'>
+      <div ng-controller='AppCtrl'>
+        <phone number='333-333' network='idea-network' make-call='leaveVoiceemail(number , message)'></phone>
+        <phone number='222-222' network='airtel-network' make-call='leaveVoiceemail(number , message)'></phone>
+        <phone number='122343' network='bsnl-network' make-call='leaveVoiceemailHome (number , message)'></phone>
+      </div>
+    </div>
+  </body>
+</html>
+
+

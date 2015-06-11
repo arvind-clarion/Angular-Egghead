@@ -14,15 +14,15 @@ myApp.controller('MyController', function ($scope) {
 .factory('Avengers', function(){
    var Avengers = {}
    Avengers.cast =[
-                  {name: "Arvind1", last_name: "Vyas1"},
-                  {name: "Arvind3", last_name: "Vyas2"},
-                  {name: "Arvind4", last_name: "Vyas3"},
-                  {name: "Arvind5", last_name: "Vyas4"},
-                  {name: "Arvind11", last_name: "Vyas5"},
-                  {name: "Arvind7", last_name: "Vyas7"},
-                  {name: "Arvind8", last_name: "Vyas8"},
-                  {name: "Arvind9", last_name: "Vyas9"},
-                  {name: "Arvind12", last_name: "Vyas11"}]
+                  {name: "Arvind", last_name: "Vyas"},
+                  {name: "Parth", last_name: "Mewada"},
+                  {name: "Arpit", last_name: "Vaishnav"},
+                  {name: "Kaushal", last_name: "Sharma"},
+                  {name: "Anand", last_name: "Thirpathi"},
+                  {name: "Ashok", last_name: "Agrawal"},
+                  {name: "Prashant", last_name: "Tiwari"},
+                  {name: "Sonam", last_name: "Vora"},
+                  {name: "Sapna", last_name: "Prajapati"}]
    return Avengers
 })
 .factory('Data', function(){
@@ -45,3 +45,66 @@ myApp.controller('MyController', function ($scope) {
 .controller('AvengersCtrl', function($scope, Avengers){
   $scope.avengers = Avengers;
 })
+// directive
+
+.directive("superman", function(){
+   return {
+     restrict: "E",
+     template: "<div>Super man is saving clarion</div>"
+   }
+})
+
+.directive("supermanone", function(){
+  return {
+    restrict: "A",
+    link: function(){
+      alert("I am superman");
+
+    }
+  }
+})
+
+.directive("supermancomment", function(){
+  return {
+    restrict: "M",
+    link: function(){
+      alert("Look at me in comment");
+
+    }
+  }
+});
+
+
+// Initialize object for second angular app
+var behaviorApp = angular.module('behaviorApp', []);
+
+behaviorApp.directive("enter", function(){
+  return function(scope, element){
+    element.bind("mouseenter", function(){
+      console.log("I am inside of you");
+    })
+  }
+})
+.directive("leave", function(){
+  return function(scope, element){
+    element.bind("mouseleave", function(){
+      console.log("I am outside of you");
+    })
+  }
+})
+
+
+.directive("enter1", function(){
+  return function(scope, element, attrs){
+    element.bind("mouseenter", function(){
+      element.addClass(attrs.enter1);
+    })
+  }
+})
+.directive("leave1", function(){
+  return function(scope, element, attrs){
+    element.bind("mouseleave", function(){
+    element.removeClass(attrs.enter1);
+    })
+  }
+});

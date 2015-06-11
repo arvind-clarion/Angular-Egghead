@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Angular App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css">
+    <script src="ep18_controller.js"></script>
+  </head>
+  <body>
+    <div ng-app= 'drinkApp'>
+      <div ng-controller='AppCtrl'>
+        Ctrl
+        <input type='text' ng-model='ctrlFlavor'>
+        Dir
+        <div drink flavor="ctrlFlavor"></div>
+      </div>
+    </div>
+  </body>
+</html>
